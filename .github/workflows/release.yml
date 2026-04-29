@@ -46,7 +46,6 @@ jobs:
         path: dist/
 
   build-sdist:
-    needs: validate-release-request
     runs-on: ubuntu-22.04
 
     env:
@@ -73,7 +72,6 @@ jobs:
         path: dist/*.tar.*
 
   build-wheels:
-    needs: validate-release-request
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
